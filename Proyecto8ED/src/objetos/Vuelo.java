@@ -36,9 +36,13 @@ public class Vuelo {
 		return capacidadTotal - plazasOcupadas;
 	}
 
+	public void setPlazasOcupadas() {
+		plazasOcupadas = plazasOcupadas + 1;
+	}
+
 	public String toString() {
 		return String.format(
-				"El id de vuelo es %s, el origen es %s, el destino es %s, su capacidad total es de %d	 y tiene %d plazas ocupadas",
+				"El id de vuelo es %s, el origen es %s, el destino es %s, su capacidad total es de %d y tiene %d plazas ocupadas.",
 				idVuelo, origen, destino, capacidadTotal, plazasOcupadas);
 	}
 }
