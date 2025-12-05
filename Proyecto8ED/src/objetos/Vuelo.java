@@ -1,10 +1,7 @@
 package objetos;
 
 public class Vuelo {
-	/*
-	 * TODO: Hacerlo por versiones:Versión 3 -> Añadir ToString y un método que
-	 * devuelva cuantas plazas hay libres
-	 */
+
 	private String idVuelo, origen, destino;
 	private int capacidadTotal, plazasOcupadas;
 
@@ -33,5 +30,15 @@ public class Vuelo {
 
 	public int getPlazasOcupadas() {
 		return plazasOcupadas;
+	}
+
+	public int plazasDisponibles() {
+		return capacidadTotal - plazasOcupadas;
+	}
+
+	public String toString() {
+		return String.format(
+				"El id de vuelo es %s, el origen es %s, el destino es %s, su capacidad total es de %d	 y tiene %d plazas ocupadas",
+				idVuelo, origen, destino, capacidadTotal, plazasOcupadas);
 	}
 }
