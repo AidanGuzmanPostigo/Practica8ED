@@ -1,6 +1,18 @@
 package objetos;
+
 public class Usuario {
-/*TODO: Hay que hacer un constructor con esta clase que contenga los siguientes atributos: DNI, Nombre, Teléfono, Fecha nacimiento.
-Hacerlo por versiones: Versión 1 -> Solo constructor, Versión 2 -> Añadir getters y setter, Versión 3 -> Añadir ToString.
-*/
+	/*
+	 * TODO: Versión 2 -> Añadir getters y setter, Versión 3 -> Añadir ToString.
+	 */
+	private String dni, nom, fechNac;
+	private int telf;
+	private String[] reservas;
+
+	public Usuario(String dni, String nom, String fechNac, int telf) {
+		this.dni = dni;
+		this.nom = nom;
+		this.fechNac = fechNac;
+		this.telf = telf;
+		reservas = new String[20];
+	}
 }
