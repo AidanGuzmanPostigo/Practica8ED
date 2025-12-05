@@ -2,8 +2,8 @@ package objetos;
 
 public class Vuelo {
 	/*
-	 * TODO: Hacerlo por versiones: Versión 2 -> Añadir getters y setter, Versión 3
-	 * -> Añadir ToString y un método que devuelva cuantas plazas hay libres
+	 * TODO: Hacerlo por versiones:Versión 3 -> Añadir ToString y un método que
+	 * devuelva cuantas plazas hay libres
 	 */
 	private String idVuelo, origen, destino;
 	private int capacidadTotal, plazasOcupadas;
@@ -13,5 +13,25 @@ public class Vuelo {
 		this.origen = origen;
 		this.destino = destino;
 		this.capacidadTotal = capacidadTotal;
+	}
+
+	public String getIdVuelo() {
+		return idVuelo;
+	}
+
+	public String getOrigen() {
+		return origen;
+	}
+
+	public String getDestino() {
+		return destino;
+	}
+
+	public int getCapacidadTotal() {
+		return capacidadTotal;
+	}
+
+	public int getPlazasOcupadas() {
+		return plazasOcupadas;
 	}
 }
