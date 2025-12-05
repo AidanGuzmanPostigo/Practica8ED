@@ -1,9 +1,6 @@
 package objetos;
 
 public class Usuario {
-	/*
-	 * TODO: Versión 3 -> Añadir ToString.
-	 */
 	private String dni, nom, fechNac;
 	private int telf;
 	private String[] reservas;
@@ -56,5 +53,13 @@ public class Usuario {
 			}
 			i++;
 		} while (i < reservas.length || isRegister == false);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder s = new StringBuilder();
+		s.append(String.format("DNI: %s\nNombre: %s\nFecha de Nacimiento: %s\nTeléfono: %d\nReservas: %d", dni, nom,
+				fechNac, telf, getReservas().toString()));
+		return s.toString();
 	}
 }
