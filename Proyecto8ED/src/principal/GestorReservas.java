@@ -3,22 +3,30 @@ import objetos.Usuario;
 import objetos.Vuelo;
 public class GestorReservas {
 	public void principal() {
-		
-		/*
-		Realizar funciones que permitan que el usuario -> función para borrar la reserva (Versión 2) y por último en la versión 3 poder imprimir las reservas con otra función
-		*/
+		Usuario u = new Usuario ("111a", "user1", "1-1-2000", 666111222);
+		Vuelo v = new Vuelo ("V-1", "Málaga", "Madrid", 200);
+		System.out.println(v.getCapacidadTotal());
+		System.out.println(v.getPlazasOcupadas());
+		System.out.println(v.plazasDisponibles());
+		System.out.println(v.toString());
+		setReservas (u, v);
+		System.out.println(u.toString());
+		borrarReserva (u, v);
+		borrarReserva (u, v);
+		System.out.println(u.toString());
 	}
 	public void setReservas (Usuario u, Vuelo v) {
 		int i = 0;
 		boolean isRegister = false;
 		do {
-			if (u.getReservas()[i].isEmpty() || u.getReservas()[i] == "") {
+			if (u.getReservas()[i] == null || u.getReservas()[i] == "") {
 				u.getReservas()[i] = v.getIdVuelo();
 				isRegister = true;
+				v.setPlazasOcupadas();
 			}
 			i++;
-		} while (i < u.getReservas().length || isRegister == false);
-		if (u.getReservas()[u.getReservas().length-1].isBlank() || u.getReservas()[u.getReservas().length-1].isEmpty()) {
+		} while (i < u.getReservas().length && isRegister == false);
+		if (u.getReservas()[u.getReservas().length-1] != null) {
 			System.out.println("No se le pueden asignar más reservas a este usuario, asegurate de eliminar alguna de las que ya tiene");
 		}
 	}
